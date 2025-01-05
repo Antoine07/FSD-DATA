@@ -102,12 +102,28 @@ Dans ce cours, vous utiliserez **VSCode** pour écrire des requêtes que nous ex
 
 ## 📖 SQL : Historique et Concepts
 
-- 📅 Développé initialement par **IBM** en **1974** et normalisé en **1987**.
-- SQL est un langage pour exploiter des **bases de données relationnelles** (données organisées dans des tables).
+Le **SQL (Structured Query Language)** a vu le jour dans les années 1970 au sein des laboratoires d'IBM, sous l'impulsion d'**Edgar F. Codd**, un informaticien britannique considéré comme le père des bases de données **relationnelles**.  
 
-Un **SGDB** (Système de Gestion de Bases de Données) est un logiciel permettant d’enregistrer, extraire, mettre à jour ou supprimer des données.
+### Origines  
 
----
+- En 1970, Edgar Codd publie un article révolutionnaire intitulé *"A Relational Model of Data for Large Shared Data Banks"*. Cet article définit les bases des bases de données relationnelles et met en avant un modèle basé sur des tables pour organiser les données.  
+
+- Suite à cette publication, IBM développe un projet de recherche nommé **System R** au milieu des années 1970. Ce projet donne naissance à un langage initialement nommé **SEQUEL** (Structured English Query Language), conçu pour interagir avec les bases de données relationnelles.  
+
+- Cependant, en raison d'un conflit juridique sur le nom "SEQUEL", il a été rebaptisé **SQL**.  
+
+### Normalisation  
+
+- En 1986, l'ANSI (American National Standards Institute) publie la première norme officielle pour le langage SQL. Cette standardisation marque un tournant, car elle permet aux développeurs de travailler avec un langage commun, indépendamment des fournisseurs de bases de données.  
+
+- En 1987, l'ISO (International Organization for Standardization) adopte également le SQL comme norme internationale. Depuis lors, le langage a connu plusieurs mises à jour pour intégrer de nouvelles fonctionnalités, comme les transactions, les procédures stockées et la gestion des données JSON.  
+
+### Impact  
+
+SQL a été adopté massivement dans le monde entier grâce à sa simplicité et sa capacité à gérer efficacement des bases de données relationnelles. Aujourd'hui, il reste un outil essentiel pour les développeurs, les administrateurs de bases de données et les analystes. 🌟  
+
+---  
+
 
 ## 🔍 Groupes de Commandes SQL
 
