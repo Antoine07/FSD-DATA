@@ -9,29 +9,17 @@ MySQL est un système de gestion de base de données **typé**, ce qui signifie 
 - **Intervalle** : de **-2 147 483 648** à **2 147 483 647**
 - **Comportement** : Si une valeur dépasse cet intervalle, MySQL enregistre automatiquement la valeur maximale ou minimale autorisée.
 
-**Exemple :**
-```sql
-CREATE TABLE example (
-    id INT NOT NULL,
-    value INT
-);
-```
 
 ### 2. **BIGINT**
 - **Taille** : 8 octets  
 - **Intervalle** : de **-9 223 372 036 854 775 808** à **9 223 372 036 854 775 807**
+
 
 ### 3. **TINYINT**
 - **Taille** : 1 octet  
 - **Intervalle signé** : de **-128** à **127**  
 - **Intervalle unsigned** : de **0** à **255**
 
-**Exemple :**
-```sql
-CREATE TABLE tiny_example (
-    small_value TINYINT UNSIGNED
-);
-```
 
 ℹ️ **Note** : `UNSIGNED` peut être utilisé avec d'autres types numériques pour interdire les valeurs négatives.
 
@@ -42,12 +30,6 @@ Permet de stocker des nombres précis, utiles pour les données financières ou 
 - `n` : Nombre total de chiffres significatifs.
 - `v` : Nombre de chiffres après la virgule.
 
-**Exemple :**
-```sql
-CREATE TABLE prices (
-    price DECIMAL(10, 2) -- 10 chiffres, dont 2 après la virgule
-);
-```
 
 ---
 
@@ -61,16 +43,10 @@ Ces types sont utilisés pour des textes courts.
 | **CHAR(x)**   | x caractères     | Réserve toujours x caractères, même si la valeur est plus courte. |
 | **VARCHAR(x)**| x caractères     | Stocke dynamiquement jusqu’à x caractères. |
 
-**Exemple :**
-```sql
-CREATE TABLE text_example (
-    fixed_text CHAR(10),
-    variable_text VARCHAR(50)
-);
-```
 
 ### 2. **TEXT**  
 Utilisé pour stocker des textes longs, avec une taille maximale de **65 535 caractères (2¹⁶ octets)**.
+
 
 ---
 
@@ -80,17 +56,8 @@ Utilisé pour stocker des textes longs, avec une taille maximale de **65 535 car
 Un type binaire utilisé pour stocker de gros objets binaires, comme des images ou des fichiers.  
 ℹ️ **Note** : Les chaînes de caractères dans un `BLOB` sont sensibles à la casse.
 
----
-
 ### 2. **ENUM**  
 Permet de définir un ensemble de valeurs prédéfinies. Utile pour les colonnes ayant des valeurs fixes.
-
-**Exemple :**
-```sql
-CREATE TABLE enum_example (
-    status ENUM('active', 'inactive', 'pending')
-);
-```
 
 ---
 
@@ -99,22 +66,8 @@ CREATE TABLE enum_example (
 ### 1. **DATE**  
 Représente une date sous le format `AAAA-MM-JJ`.
 
-**Exemple :**
-```sql
-CREATE TABLE date_example (
-    event_date DATE
-);
-```
-
 ### 2. **DATETIME**  
 Représente une date et une heure, au format `AAAA-MM-JJ HH:MM:SS`.
-
-**Exemple :**
-```sql
-CREATE TABLE datetime_example (
-    created_at DATETIME
-);
-```
 
 ---
 
@@ -123,9 +76,30 @@ Bien que MySQL propose un type `TIMESTAMP`, il est souvent mal implémenté. En 
 
 ---
 
+
 ### 💡 **Résumé des bonnes pratiques**
 - **Choisir le type approprié** : 
   - Utilisez `TINYINT` ou `INT` pour des entiers, selon la taille nécessaire.
   - Préférez `VARCHAR` aux `CHAR` pour des textes dont la taille varie.
 - **Optimisez l’espace** : Utilisez `UNSIGNED` pour interdire les valeurs négatives et étendre les plages des valeurs positives.
 - **Précision** : Employez `DECIMAL` pour les calculs financiers.
+
+---
+
+```sql
+CREATE TABLE example (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   -- Clé primaire
+    int_value INT,                               -- Exemple de type INT
+    bigint_value BIGINT,                         -- Exemple de type BIGINT
+    tinyint_value TINYINT UNSIGNED,              -- Exemple de type TINYINT UNSIGNED
+    decimal_value DECIMAL(10, 2),                -- Exemple de type DECIMAL
+    char_value CHAR(10),                         -- Exemple de type CHAR
+    varchar_value VARCHAR(50),                   -- Exemple de type VARCHAR
+    text_value TEXT,                             -- Exemple de type TEXT
+    blob_value BLOB,                             -- Exemple de type BLOB
+    enum_value ENUM('active', 'inactive', 'pending'), -- Exemple de type ENUM
+    date_value DATE,                             -- Exemple de type DATE
+    datetime_value DATETIME,                     -- Exemple de type DATETIME
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Exemple de type TIMESTAMP
+);
+```
