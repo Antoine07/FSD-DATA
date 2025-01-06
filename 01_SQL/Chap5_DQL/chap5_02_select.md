@@ -94,15 +94,6 @@ SELECT name FROM pilots WHERE num_flying > 150 AND company = 'AUS';
 
 -- Sélectionne les pilotes dont le nom commence par 'A' (LIKE pour correspondance partielle)
 SELECT name FROM pilots WHERE name LIKE 'A%';
-
--- Sélectionne les pilotes qui n'ont pas de certificat (NULL)
-SELECT name FROM pilots WHERE certificate IS NULL;
-
--- Sélectionne les pilotes ayant entre 100 et 200 heures de vol
-SELECT name FROM pilots WHERE num_flying BETWEEN 100 AND 200;
-
--- Sélectionne les pilotes dont la compagnie est soit 'AUS' soit 'FRE1'
-SELECT name FROM pilots WHERE company IN ('AUS', 'FRE1');
 ```
 
 ### **Clause `ORDER BY`**
