@@ -100,6 +100,24 @@ ADD COLUMN next_flight DATETIME,
 ADD COLUMN num_jobs INT;
 ```
 
+## Ajoutez les données suivantes dans la table pilots
+
+```sql
+INSERT INTO `pilots`
+(`certificate`,`num_flying`,`company` ,`name`)
+VALUES
+    ('ct-1', 90, 'AUS', 'Alan' ),
+    ('ct-12', 190, 'AUS', 'Albert' ),
+    ('ct-7', 80, 'CHI', 'Pierre' ),
+    ('ct-11', 200, 'AUS', 'Sophie' ),
+    ('ct-6', 20, 'FRE1', 'John' ),
+    ('ct-10', 90, 'FRE1', 'Tom' ),
+    ('ct-100', 200, 'SIN', 'Yi' ),
+    ('ct-16', 190, 'SIN', 'Yan' ),
+    ('ct-56', 300, 'AUS', 'Benoit' )
+    ;
+```
+
 ### **Mise à jour des données :**
 
 Voici un exemple pour mettre à jour les informations d'un pilote :
