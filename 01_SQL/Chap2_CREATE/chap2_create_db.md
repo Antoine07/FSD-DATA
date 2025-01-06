@@ -3,7 +3,7 @@
 Nous allons travailler avec **MySQL** ou **MariaDB**, et surtout avec le moteur **InnoDB**.
 
 Il existe plusieurs moteurs de bases de données. Pour MySQL, vous avez :  
-- **MyISAM** : ❌ Pas de transactions, mais fonctionnalités de recherche de texte.  
+- **MyISAM** : ❌ Pas de transactions, pas de Foreign Key, mais fonctionnalités de recherche de texte.  
 - **InnoDB** : ✅ Supporte les transactions et les clés étrangères (le moteur le plus utilisé).  
 - **Memory** : ⚡ Stockage dans la mémoire vive (utile pour les systèmes de cache).  
 
@@ -124,18 +124,21 @@ Exemple de table dans la base `db_aviation` :
 USE db_aviation;
 
 CREATE TABLE `companies` (
-    `comp` CHAR(4),
-    `street` VARCHAR(20),
+    `comp` CHAR(4),   -- fixe c'est 4 caractères 
+    `street` VARCHAR(20), -- variable de 0 à 20 caractère(s) plus opti pour la mémoire 
     `city` VARCHAR(20) NULL,
     `name` VARCHAR(20) NOT NULL,
-    CONSTRAINT pk_company PRIMARY KEY (`comp`)
+    CONSTRAINT `pk_company` PRIMARY KEY (`comp`) -- plus souple si l'on veut supprimer la contrainte c'est un alias ou contrainte nommée
 ) ENGINE=InnoDB;
+
+-- lister les tables de la base de données
+SHOW TABLES ;
 ```
 
 > **💡 Note :**  
 > Utilisez la commande `describe` pour voir la structure d'une table :  
 ```bash
-mysql> describe companies;
+mysql> DESCRIBE companies;
 ```
 
 ---
@@ -151,6 +154,11 @@ ALTER TABLE nom_table MODIFY nom_colonne type_de_données;
 - **Renommer une colonne :**
 ```sql
 ALTER TABLE nom_table RENAME COLUMN colonne_ancien_nom TO colonne_nouveau_nom;
+```
+
+- **Ajouter une colonne :**
+```sql
+ALTER TABLE nom_table ADD COLUMN new_field VARCHAR(20);
 ```
 
 > **⚠️ Attention :**  
