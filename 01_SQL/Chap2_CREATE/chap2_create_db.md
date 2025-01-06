@@ -124,11 +124,11 @@ Exemple de table dans la base `db_aviation` :
 USE db_aviation;
 
 CREATE TABLE `companies` (
-    `comp` CHAR(4),
-    `street` VARCHAR(20),
+    `comp` CHAR(4),   -- fixe c'est 4 caractères 
+    `street` VARCHAR(20), -- variable de 0 à 20 caractère(s) plus opti pour la mémoire 
     `city` VARCHAR(20) NULL,
     `name` VARCHAR(20) NOT NULL,
-    CONSTRAINT pk_company PRIMARY KEY (`comp`)
+    CONSTRAINT `pk_company` PRIMARY KEY (`comp`) -- plus souple si l'on veut supprimer la contrainte c'est un alias ou contrainte nommée
 ) ENGINE=InnoDB;
 
 -- lister les tables de la base de données
