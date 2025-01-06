@@ -85,18 +85,3 @@ SET `birth_day` = '1977-01-04 00:00:00',
  `num_jobs` = 8
  WHERE name = 'Pierre';
 
- -- 03 Exercice sauvegarde et suppression (facultatif) 
-
- CREATE TABLE `new_pilots` (SELECT * FROM `pilots`);
-
- INSERT INTO
-pilots (
-    `certificate`,
-    `num_flying`,
-    `company`,
-    `name`,
-    `num_jobs`,
-    `next_flight`,
-    `birth_date`,
-    `created`
-) SELECT * FROM `new_pilots`;
