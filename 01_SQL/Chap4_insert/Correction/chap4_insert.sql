@@ -29,58 +29,58 @@ VALUES
 ALTER TABLE pilots 
 ADD created DATETIME DEFAULT CURRENT_TIMESTAMP;
 
--- 02 Exercice ajout d'une colonne et mise à jour : create fields birth_day, next_flight, num_jobs
+-- 02 Exercice ajout d'une colonne et mise à jour : create fields birth_date, next_flight, num_jobs
 
 ALTER TABLE pilots 
-ADD birth_day DATETIME,
+ADD birth_date DATETIME,
 ADD next_flight DATETIME,
 ADD num_jobs SMALLINT UNSIGNED DEFAULT 0;
 
 -- ALTER TABLE pilots
--- DROP birth_day,
+-- DROP birth_date,
 -- DROP next_flight,
 -- DROP num_jobs;
 
 --- mise à jour des dates
 
 UPDATE `pilots`
-SET `birth_day` = '1978-02-04 00:00:00',
+SET `birth_date` = '1978-02-04 00:00:00',
  `next_flight` = '2020-12-04 09:50:52',
  `num_jobs` = 10
  WHERE name = 'Yi';
 
 UPDATE `pilots`
-SET `birth_day` = '1978-10-17 00:00:00',
+SET `birth_date` = '1978-10-17 00:00:00',
  `next_flight` = '2020-06-11 12:00:52',
  `num_jobs` = 50
  WHERE name = 'Sophie';
 
 UPDATE `pilots`
-SET `birth_day` = '1990-04-04 00:00:00',
+SET `birth_date` = '1990-04-04 00:00:00',
  `next_flight` = '2020-05-08 12:50:52',
  `num_jobs` = 10
  WHERE name = 'Albert';
 
 UPDATE `pilots`
-SET `birth_day` = '1998-01-04 00:00:00',
+SET `birth_date` = '1998-01-04 00:00:00',
  `next_flight` = '2020-05-08 12:50:52',
  `num_jobs` = 30
  WHERE name = 'Yan';
 
 UPDATE `pilots`
-SET `birth_day` = '2000-01-04 00:00:00',
+SET `birth_date` = '2000-01-04 00:00:00',
  `next_flight` = '2020-02-04 12:50:52',
  `num_jobs` = 7
  WHERE name = 'Benoit';
 
 UPDATE `pilots`
-SET `birth_day` = '2000-01-04 00:00:00',
+SET `birth_date` = '2000-01-04 00:00:00',
  `next_flight` = '2020-12-04 12:50:52',
  `num_jobs` = 13
  WHERE name = 'John';
 
  UPDATE `pilots`
-SET `birth_day` = '1977-01-04 00:00:00',
+SET `birth_date` = '1977-01-04 00:00:00',
  `next_flight` = '2020-05-04 12:50:52',
  `num_jobs` = 8
  WHERE name = 'Pierre';
