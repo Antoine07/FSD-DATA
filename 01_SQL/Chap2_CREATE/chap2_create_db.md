@@ -130,12 +130,15 @@ CREATE TABLE `companies` (
     `name` VARCHAR(20) NOT NULL,
     CONSTRAINT pk_company PRIMARY KEY (`comp`)
 ) ENGINE=InnoDB;
+
+-- lister les tables de la base de données
+SHOW TABLES ;
 ```
 
 > **💡 Note :**  
 > Utilisez la commande `describe` pour voir la structure d'une table :  
 ```bash
-mysql> describe companies;
+mysql> DESCRIBE companies;
 ```
 
 ---
