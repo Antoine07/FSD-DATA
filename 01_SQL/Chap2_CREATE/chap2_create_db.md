@@ -3,7 +3,7 @@
 Nous allons travailler avec **MySQL** ou **MariaDB**, et surtout avec le moteur **InnoDB**.
 
 Il existe plusieurs moteurs de bases de données. Pour MySQL, vous avez :  
-- **MyISAM** : ❌ Pas de transactions, mais fonctionnalités de recherche de texte.  
+- **MyISAM** : ❌ Pas de transactions, pas de Foreign Key, mais fonctionnalités de recherche de texte.  
 - **InnoDB** : ✅ Supporte les transactions et les clés étrangères (le moteur le plus utilisé).  
 - **Memory** : ⚡ Stockage dans la mémoire vive (utile pour les systèmes de cache).  
 
