@@ -156,6 +156,11 @@ ALTER TABLE nom_table MODIFY nom_colonne type_de_données;
 ALTER TABLE nom_table RENAME COLUMN colonne_ancien_nom TO colonne_nouveau_nom;
 ```
 
+- **Ajouter une colonne :**
+```sql
+ALTER TABLE nom_table ADD COLUMN new_field VARCHAR(20);
+```
+
 > **⚠️ Attention :**  
 > La commande `RENAME` peut ne pas fonctionner sur certains SGDB.
 
