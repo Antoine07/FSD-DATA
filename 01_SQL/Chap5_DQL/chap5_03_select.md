@@ -94,7 +94,7 @@ Une sous-requête corrélée est exécutée une fois pour chaque ligne de la req
 
 ```sql
 SELECT * 
-FROM pilots p
+FROM pilots AS p  -- convention prendre la premiere lettre du nom de la table le AS est optionnel pilots p marche également
 WHERE num_flying > (
     SELECT AVG(num_flying) 
     FROM pilots 
