@@ -176,8 +176,34 @@ WHERE num_jobs IN (
 
 6. Sélectionnez la longueur des noms des pilotes dont la longueur de leurs noms est inférieur à toutes les longueurs des noms de la compagny FRE1.
 
-7. Ajoutez la colonne plane à la table pilots :
-Sélectionnez les coordonnées des compagnies ayant des pilotes dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
+
+7. Trouver les compagnies employant des pilotes expérimentés
+
+
+8. Sélectionner le pilote le moins expérimenté
+
+9. Calculer les heures totales de vol des pilotes d'une compagnie spécifique de votre choix**
+
+
+10. Ajouter une nouvelle compagnie dans la table `companies`
+**Objectif :** Insérez une nouvelle compagnie avec les données suivantes :  
+- `comp`: 'NEW1'  
+- `street`: 'Avenue de l'Air'  
+- `city`: 'Toulouse'  
+- `num_street`: 45  
+- `name`: 'Skyline Aviation'  
+- `status`: 'published'  
+
+```sql
+INSERT INTO companies (comp, street, city, num_street, name, status) 
+VALUES ('NEW1', 'Avenue de l\'Air', 'Toulouse', 45, 'Skyline Aviation', 'published');
+```
+
+Trouver les pilotes avec des noms courts dans une compagnie donnée**
+Sélectionnez les noms des pilotes dont la longueur de leurs noms est inférieure à la longueur des noms de tous les pilotes travaillant pour la compagnie "FRE1".  
+
+
+11. (+++) Ajoutez la colonne plane à la table pilots :
 
 ```sql
 
@@ -192,4 +218,8 @@ WHERE name in ('Tom', 'John', 'Yi');
 UPDATE pilots
 SET plane = 'A340'
 WHERE name in ('Yan', 'Pierre');
-```
+```  
+
+  
+Sélectionnez les coordonnées des compagnies ayant des pilotes dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
+
