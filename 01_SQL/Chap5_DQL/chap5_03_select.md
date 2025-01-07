@@ -214,7 +214,7 @@ Trouver les pilotes avec des noms courts dans une compagnie donnée**
 Sélectionnez les noms des pilotes dont la longueur de leurs noms est inférieure à la longueur des noms de tous les pilotes travaillant pour la compagnie "FRE1".  
 
 
-11. (+++) Ajoutez la colonne plane à la table pilots :
+12. (+++) Ajoutez la colonne plane à la table pilots :
 
 ```sql
 
