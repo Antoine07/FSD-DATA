@@ -181,6 +181,8 @@ SET `comp` = 'ITA',
     `num_street` = 20;
 ```
 
+5. Trouvez toutes les compagnies n'ayant pas de pilotes.
+
 6. Sélectionnez tous les pilotes dont le nombre d'heures de travail est inférieur à tous les nombres d'heures de travail de la compagnie CHI.
 
 7. Sélectionnez la longueur des noms des pilotes dont la longueur de leurs noms est inférieur à toutes les longueurs des noms de la compagny FRE1.
