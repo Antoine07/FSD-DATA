@@ -164,13 +164,13 @@ WHERE num_jobs IN (
 
 ## Exercices
 
-Question:  Quelles sont les coordonnées des compagnies qui employent des pilotes faisant moins de 90 heures de vol ?
+- Question:  Quelles sont les coordonnées des compagnies qui employent des pilotes faisant moins de 90 heures de vol ?
 
-Question: Sélectionnez le pilote ayant fait le plus d'heures de vol sans utiliser l'opérateur MAX.
+- Question: Sélectionnez le pilote ayant fait le plus d'heures de vol sans utiliser l'opérateur MAX.
 
-Question: Faites la somme des heures de vol des pilotes dont le nom de la compagnie est Air France, vous ne connaissez pas bien sûr la clef primaire de la compagnie.
+- Question: Faites la somme des heures de vol des pilotes dont le nom de la compagnie est Air France, vous ne connaissez pas bien sûr la clef primaire de la compagnie.
 
-Question: Ajoutez maintenant la compagnie suivante dans la table companies.
+- Question: Ajoutez maintenant la compagnie suivante dans la table companies.
 
 ```sql
 INSERT INTO `companies`
@@ -181,19 +181,19 @@ SET `comp` = 'ITA',
     `num_street` = 20;
 ```
 
-Question: Trouvez toutes les compagnies n'ayant pas de pilotes.
+- Question: Trouvez toutes les compagnies n'ayant pas de pilotes.
 
-Question:  Sélectionnez tous les pilotes dont le nombre d'heures de travail est inférieur à tous les nombres d'heures de travail de la compagnie CHI.
+- Question:  Sélectionnez tous les pilotes dont le nombre d'heures de travail est inférieur à tous les nombres d'heures de travail de la compagnie CHI.
 
-Question: Sélectionnez la longueur des noms des pilotes dont la longueur de leurs noms est inférieur à toutes les longueurs des noms de la compagny FRE1.
+- Question: Sélectionnez la longueur des noms des pilotes dont la longueur de leurs noms est inférieur à toutes les longueurs des noms de la compagny FRE1.
 
-Question: Trouver les compagnies employant des pilotes expérimentés
+- Question: Trouver les compagnies employant des pilotes expérimentés
 
-Question:  Sélectionner le pilote le moins expérimenté
+- Question:  Sélectionner le pilote le moins expérimenté
 
-Question:  Calculer les heures totales de vol des pilotes d'une compagnie spécifique de votre choix**
+- Question:  Calculer les heures totales de vol des pilotes d'une compagnie spécifique de votre choix**
 
-Question:  Ajouter une nouvelle compagnie dans la table `companies`
+- Question:  Ajouter une nouvelle compagnie dans la table `companies`
 **Objectif :** Insérez une nouvelle compagnie avec les données suivantes :  
 - `comp`: 'NEW1'  
 - `street`: 'Avenue de l'Air'  
@@ -211,7 +211,7 @@ Trouver les pilotes avec des noms courts dans une compagnie donnée**
 Sélectionnez les noms des pilotes dont la longueur de leurs noms est inférieure à la longueur des noms de tous les pilotes travaillant pour la compagnie "FRE1".  
 
 
-Question: (+++) Ajoutez la colonne plane à la table pilots :
+- Question: (+++) Ajoutez la colonne plane à la table pilots :
 
 ```sql
 
@@ -230,4 +230,13 @@ WHERE name in ('Yan', 'Pierre');
 
   
 Sélectionnez les coordonnées des compagnies ayant des pilotes dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
+
+--- 
+
+**Rêquetes corrolées**
+
+>[!IMPORTANT]
+>Il est recommandé d'éviter l'utilisation excessive de sous-requêtes corrélées SQL, car elles s'exécutent pour chaque enregistrement retourné par la requête principale, ce qui peut ralentir considérablement les performances. Ces sous-requêtes ne doivent être utilisées que lorsque cela est absolument nécessaire et que les autres solutions (comme les jointures ou agrégations) ne conviennent pas.
+
+-  Question: Sélectionner les pilotes dont le nombre d'heures de vol est supérieur à celui de la moyenne des heures de vol des pilotes de leur propre compagnie
 
