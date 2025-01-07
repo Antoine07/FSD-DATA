@@ -229,4 +229,27 @@ SELECT * FROM pilots LIMIT 3;
 ```sql
 ```
 
+### **07 Trouver les compagnies actives dans une ville donnée**
+**Objectif :** Afficher les compagnies situées à "France" dont le statut est `published`.
+
+```sql
+
+```
+
 ---
+
+### **08 Identifier les pilotes proches d’un vol programmé**
+**Objectif :** Lister les pilotes dont le prochain vol (`next_flight`) est prévu avant le 1er février 2025 ou qui ont moins de 100 heures de vol (`num_flying`).
+
+```sql
+
+```
+
+---
+
+### **09 Trouver les compagnies dans plusieurs villes**
+**Objectif :** Afficher les compagnies qui sont situées soit à "Australie", soit à "Chine".
+
+```sql
+
+```
