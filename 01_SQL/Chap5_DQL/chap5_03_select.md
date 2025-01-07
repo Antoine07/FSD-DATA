@@ -172,20 +172,29 @@ WHERE num_jobs IN (
 
 4. Ajoutez maintenant la compagnie suivante dans la table companies.
 
-5. Sélectionnez tous les pilotes dont le nombre d'heures de travail est inférieur à tous les nombres d'heures de travail de la compagnie CHI.
+```sql
+INSERT INTO `companies`
+SET `comp` = 'ITA', 
+    `street` = 'mapoli', 
+    `city` = 'Rome', 
+    `name` = 'Italia Air',
+    `num_street` = 20;
+```
 
-6. Sélectionnez la longueur des noms des pilotes dont la longueur de leurs noms est inférieur à toutes les longueurs des noms de la compagny FRE1.
+6. Sélectionnez tous les pilotes dont le nombre d'heures de travail est inférieur à tous les nombres d'heures de travail de la compagnie CHI.
+
+7. Sélectionnez la longueur des noms des pilotes dont la longueur de leurs noms est inférieur à toutes les longueurs des noms de la compagny FRE1.
 
 
-7. Trouver les compagnies employant des pilotes expérimentés
+8. Trouver les compagnies employant des pilotes expérimentés
 
 
-8. Sélectionner le pilote le moins expérimenté
+9. Sélectionner le pilote le moins expérimenté
 
-9. Calculer les heures totales de vol des pilotes d'une compagnie spécifique de votre choix**
+10. Calculer les heures totales de vol des pilotes d'une compagnie spécifique de votre choix**
 
 
-10. Ajouter une nouvelle compagnie dans la table `companies`
+11. Ajouter une nouvelle compagnie dans la table `companies`
 **Objectif :** Insérez une nouvelle compagnie avec les données suivantes :  
 - `comp`: 'NEW1'  
 - `street`: 'Avenue de l'Air'  
