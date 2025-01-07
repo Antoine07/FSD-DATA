@@ -9,7 +9,7 @@ Les fonctions de groupe permettent de réaliser des calculs sur un ensemble de l
 | **Fonction**       | **Description**                                                        |
 |---------------------|------------------------------------------------------------------------|
 | `AVG([DISTINCT] exp)` | Calcule la **moyenne** des valeurs d'une expression.                 |
-| `COUNT({*|DISTINCT] exp})` | Renvoie le **nombre de lignes** (ou valeurs distinctes) correspondant. |
+| `COUNT([DISTINCT] exp)` | Renvoie le **nombre de lignes** (ou valeurs distinctes) correspondant. |
 | `MAX([DISTINCT] exp)` | Trouve la **valeur maximale**.                                       |
 | `MIN([DISTINCT] exp)` | Trouve la **valeur minimale**.                                       |
 | `SUM([DISTINCT] exp)` | Effectue la **somme** des valeurs d'une expression.                 |
