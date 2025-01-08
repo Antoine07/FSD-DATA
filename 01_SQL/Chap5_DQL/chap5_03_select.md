@@ -248,7 +248,7 @@ FROM pilots p
 WHERE p.num_flying > (
     SELECT AVG(num_flying)
     FROM pilots     
-    WHERE company = p.company
+    WHERE company = p.company -- ligne par ligne avec la requête principale
 );
 
 ```
