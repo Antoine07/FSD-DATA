@@ -51,7 +51,7 @@ ON p.company = c.comp;
 
 #### **Résultat**
 | pilot_name       | company_name      |
-+------------------+-------------------+
+|------------------|-------------------|
 | Alice Martin     | Paris Air         |
 | Pierre Dupont    | Paris Air         |
 | Chlo Dubois      | Lyon Airways      |
@@ -90,7 +90,7 @@ Insérez dans la base de données des pilotes qui ne sont pas rattachés à une 
 #### **Résultat**
 
 | pilot_name       | company_name      |
-+------------------+-------------------+
+|------------------|-------------------|
 | John Doe         | NULL              |
 | Alice Martin     | Paris Air         |
 | Pierre Dupont    | Paris Air         |
