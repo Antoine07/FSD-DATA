@@ -77,7 +77,7 @@ Récupérez les données suivantes pour mettre à jour vos données.
 ALTER TABLE companies
 ADD COLUMN bonus DECIMAL(10, 2) DEFAULT 0;
 
-SELECT company, AVG(num_flying) AS avg_flying_hours
+SELECT company, ROUND( AVG(num_flying), 2 ) AS avg_flying_hours
 FROM pilots
 WHERE bonus = 200
 GROUP BY company;
@@ -142,10 +142,10 @@ HAVING SUM(num_flying) > 30;
 
 ###  Moyenne filtrée par pays
 
-Calculez la **moyenne des heures de vol** des compagnies basées en **Paris**.
+Calculez la **moyenne des heures de vol** des compagnies basées à **Paris**.
 
 ```sql
-SELECT company, AVG(num_flying) AS avg_flying_hours
+SELECT company, ROUND( AVG(num_flying), 2 ) AS avg_flying_hours
 FROM pilots
 WHERE company IN (
     SELECT comp FROM companies WHERE city = 'Paris'
@@ -153,4 +153,5 @@ WHERE company IN (
 GROUP BY company;
 ```
 
-Cette requête calcule la moyenne des heures de vol des compagnies dont le pays est la France. La sous-requête dans la clause `WHERE` permet de sélectionner les compagnies basées en France.
+Cette requête calcule la moyenne des heures de vol des compagnies dont la ville est basée à Paris. 
+La sous-requête dans la clause `WHERE` permet de sélectionner les compagnies basées à Paris.
