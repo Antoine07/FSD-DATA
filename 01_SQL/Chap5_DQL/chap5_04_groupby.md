@@ -54,7 +54,7 @@ LIMIT n;
 Calculez la **moyenne** des heures de vol pour chaque compagnie.
 
 ```sql
-SELECT company, AVG(num_flying) AS avg_flying_hours
+SELECT company, ROUND( AVG(num_flying), 2 ) AS avg_flying_hours
 FROM pilots
 GROUP BY company;
 ```
