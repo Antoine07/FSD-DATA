@@ -93,8 +93,12 @@
    **Question** : Trouvez les pilotes ayant volé plus que la moyenne d'heures de vol dans la table `pilots`.
 
    ```sql
-  
+   SELECT name, num_flying
+   FROM pilots
+   WHERE num_flying > (SELECT ROUND( AVG(num_flying), 2 ) from pilots) ;
    ```
+
+ 
 
 ---
 
@@ -102,7 +106,31 @@
    **Question** : Listez les compagnies ayant au moins un pilote ayant volé plus de 40 heures.
 
    ```sql
- 
+ SELECT company
+   FROM pilots
+   GROUP BY company
+   HAVING MAX(num_flying) > 40;
+
+   -- solution avec ANY 
+
+   SELECT company
+   FROM pilots p
+   GROUP BY company
+   HAVING 40 < ANY (SELECT num_flying FROM pilots WHERE company = p.company ) ;
+
+   --- on peut aussi utiliser les fonctions de groupement
+
+   SELECT 
+      company, COUNT(*) as nb_pilots
+   FROM pilots
+   GROUP BY company
+   HAVING MAX(num_flying) > 40;
+
+   SELECT 
+      company, COUNT(*) as nb_pilots, MAX(num_flying) as max_num_flying
+   FROM pilots
+   GROUP BY company
+   HAVING MAX(num_flying) > 40;
    ```
 
 ---
@@ -111,7 +139,10 @@
    **Question** : Trouvez les compagnies ayant des pilotes avec un âge moyen supérieur à 40 ans.
 
    ```sql
-  
+   SELECT company
+   FROM pilots
+   GROUP BY company
+   HAVING AVG(age) > 40;
    ```
 
 ---
@@ -120,7 +151,10 @@
    **Question** : Listez les compagnies où le bonus moyen des pilotes est supérieur à 500.
 
 ```sql
-
+   SELECT company
+   FROM pilots
+   GROUP BY company
+   HAVING AVG(bonus) > 200;
 ```
 
 #### 13. Pilotes avec un bonus supérieur à la moyenne de leur compagnie
@@ -128,4 +162,36 @@
 
 ```sql
 
+```
+
+### 14 Trouvez les énoncés des trois requêtes suivantes
+
+1. 
+
+```sql
+   SELECT 
+      company, COUNT(*) 
+   FROM pilots
+   GROUP BY company
+   HAVING MAX(num_flying) > 40;
+```
+
+2.
+
+```sql
+SELECT 
+      company, COUNT(*), MAX(num_flying)
+   FROM pilots
+   GROUP BY company
+   HAVING MAX(num_flying) > 40;
+```
+
+3.
+
+```sql
+SELECT 
+   company, COUNT(*) 
+FROM pilots
+GROUP BY company
+HAVING AVG(bonus) > 200;
 ```
