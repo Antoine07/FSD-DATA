@@ -50,8 +50,6 @@ ON p.company = c.comp;
 ```
 
 #### **Résultat**
-
-+------------------+-------------------+
 | pilot_name       | company_name      |
 +------------------+-------------------+
 | Alice Martin     | Paris Air         |
@@ -90,7 +88,7 @@ ON p.company = c.comp;
 Insérez dans la base de données des pilotes qui ne sont pas rattachés à une compagnie spécifique. 
 
 #### **Résultat**
-+------------------+-------------------+
+
 | pilot_name       | company_name      |
 +------------------+-------------------+
 | John Doe         | NULL              |
