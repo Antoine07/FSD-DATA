@@ -1,3 +1,4 @@
+### **Exercices de base sur l'agrégation**
 
 #### 1. **Somme des âges des pilotes**
    **Question** : Calculez la somme des âges des pilotes dans la table `pilots`.
@@ -59,13 +60,18 @@
       LIMIT 1)
    ;
    ```
+
 ---
+
+### **Exercices intermédiaires sur l'agrégation**
 
 #### 6. **Nombre de pilotes ayant volé plus de 30 heures**
    **Question** : Trouvez combien de pilotes ont un nombre total de vol supérieur à 30 heures.
 
    ```sql
-
+   SELECT COUNT(*) AS pilots_over_30_hours
+   FROM pilots
+   WHERE num_flying > 30;
    ```
 
 ---
@@ -74,17 +80,21 @@
    **Question** : Calculez la moyenne des heures de vol (`num_flying`) pour chaque compagnie.
 
    ```sql
-
+   SELECT company, AVG(num_flying) AS avg_flying_hours
+   FROM pilots
+   GROUP BY company;
    ```
 
 ---
-
 
 #### 8. **Compagnies avec au moins 3 pilotes**
    **Question** : Affichez les compagnies ayant au moins 3 pilotes dans leur effectif.
 
    ```sql
-
+   SELECT company
+   FROM pilots
+   GROUP BY company
+   HAVING COUNT(*) >= 3;
    ```
 
 ---
@@ -93,12 +103,10 @@
    **Question** : Trouvez les pilotes ayant volé plus que la moyenne d'heures de vol dans la table `pilots`.
 
    ```sql
-   SELECT name, num_flying
+   SELECT pilot_name
    FROM pilots
-   WHERE num_flying > (SELECT ROUND( AVG(num_flying), 2 ) from pilots) ;
+   WHERE num_flying > (SELECT AVG(num_flying) FROM pilots);
    ```
-
- 
 
 ---
 
@@ -106,7 +114,7 @@
    **Question** : Listez les compagnies ayant au moins un pilote ayant volé plus de 40 heures.
 
    ```sql
- SELECT company
+   SELECT company
    FROM pilots
    GROUP BY company
    HAVING MAX(num_flying) > 40;
@@ -117,8 +125,6 @@
    FROM pilots p
    GROUP BY company
    HAVING 40 < ANY (SELECT num_flying FROM pilots WHERE company = p.company ) ;
-
-   --- on peut aussi utiliser les fonctions de groupement
 
    SELECT 
       company, COUNT(*) as nb_pilots
@@ -147,46 +153,66 @@
 
 ---
 
-#### 12. Compagnies avec des pilotes ayant un bonus moyen supérieur à 500
-   **Question** : Listez les compagnies où le bonus moyen des pilotes est supérieur à 500.
+#### 12. **Compagnies avec des pilotes ayant un bonus moyen supérieur à 200**
+   **Question** : Listez les compagnies où le bonus moyen des pilotes est supérieur à 200.
 
-```sql
+   ```sql
    SELECT company
    FROM pilots
    GROUP BY company
    HAVING AVG(bonus) > 200;
-```
+   ```
 
-#### 13. Pilotes avec un bonus supérieur à la moyenne de leur compagnie
+---
+
+#### 13. **Pilotes avec un bonus supérieur à la moyenne de leur compagnie**
    **Question** : Trouvez les pilotes dont le bonus est supérieur à la moyenne des bonus des pilotes dans leur compagnie.
 
-```sql
+   ```sql
+   SELECT name
+   FROM pilots p
+   WHERE bonus > (
+       SELECT AVG(bonus)
+       FROM pilots
+       WHERE company = p.company
+   );
+   ```
 
-```
+---
 
-### 14 Trouvez les énoncés des trois requêtes suivantes
+### **14. Trouvez les énoncés des trois requêtes suivantes**
 
-1. 
-
-```sql
-   SELECT 
-      company, COUNT(*) 
-   FROM pilots
-   GROUP BY company
-   HAVING MAX(num_flying) > 40;
-```
-
-2.
+1. **Requête 1** :
 
 ```sql
 SELECT 
-      company, COUNT(*), MAX(num_flying)
-   FROM pilots
-   GROUP BY company
-   HAVING MAX(num_flying) > 40;
+   company, COUNT(*) 
+FROM pilots
+GROUP BY company
+HAVING MAX(num_flying) > 40;
 ```
 
-3.
+**Énoncé** :  
+Listez les compagnies ayant au moins un pilote ayant effectué plus de 40 heures de vol, ainsi que le nombre total de pilotes par compagnie.
+
+---
+
+2. **Requête 2** :
+
+```sql
+SELECT 
+   company, COUNT(*), MAX(num_flying)
+FROM pilots
+GROUP BY company
+HAVING MAX(num_flying) > 40;
+```
+
+**Énoncé** :  
+Listez les compagnies ayant au moins un pilote ayant effectué plus de 40 heures de vol, ainsi que le nombre total de pilotes et le maximum des heures de vol par compagnie.
+
+---
+
+3. **Requête 3** :
 
 ```sql
 SELECT 
@@ -194,4 +220,25 @@ SELECT
 FROM pilots
 GROUP BY company
 HAVING AVG(bonus) > 200;
+```
+
+**Énoncé** :  
+Listez les compagnies dont la moyenne des bonus des pilotes dépasse 200 €, ainsi que le nombre total de pilotes par compagnie.
+
+---
+
+#### 15. Nombre total de pilotes et compagnies sans pilotes
+   **Question** : Calculez le nombre total de pilotes, ainsi que le nombre de compagnies sans aucun pilote dans la table companies.
+
+```sql
+SELECT 
+   (SELECT COUNT(*) AS total_pilots
+   FROM pilots )  as count_pilots,
+   (SELECT COUNT(*) AS companies_without_pilots
+   FROM companies
+   WHERE comp NOT IN (
+      SELECT DISTINCT company FROM pilots
+      WHERE company IS NOT NULL
+   ) ) as count_companies
+;
 ```
