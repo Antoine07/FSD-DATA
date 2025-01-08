@@ -72,17 +72,17 @@
 
 ---
 
-#### 9. **Nombre total de pilotes et compagnies sans pilotes**
-   **Question** : Calculez le nombre total de pilotes, ainsi que le nombre de compagnies sans aucun pilote dans la table `companies`.
+#### 9. **Pilotes ayant volé plus que la moyenne**
+   **Question** : Trouvez les pilotes ayant volé plus que la moyenne d'heures de vol dans la table `pilots`.
 
    ```sql
-   
+  
    ```
 
 ---
 
-#### 11. **Pilotes ayant volé plus que la moyenne**
-   **Question** : Trouvez les pilotes ayant volé plus que la moyenne d'heures de vol dans la table `pilots`.
+#### 10. **Compagnies avec un pilote ayant plus de 40 heures de vol**
+   **Question** : Listez les compagnies ayant au moins un pilote ayant volé plus de 40 heures.
 
    ```sql
  
@@ -90,29 +90,34 @@
 
 ---
 
-#### 12. **Compagnies avec un pilote ayant plus de 40 heures de vol**
-   **Question** : Listez les compagnies ayant au moins un pilote ayant volé plus de 40 heures.
-
-   ```sql
-
-   ```
-
----
-
-#### 13. **Compagnies avec des pilotes ayant un âge moyen supérieur à 40 ans**
+#### 11. **Compagnies avec des pilotes ayant un âge moyen supérieur à 40 ans**
    **Question** : Trouvez les compagnies ayant des pilotes avec un âge moyen supérieur à 40 ans.
-
-   ```sql
-
-   ```
-
----
-
-#### 14. **Top 3 des pilotes avec le plus de jobs et de vols**
-   **Question** : Trouvez les 3 pilotes ayant effectué le plus grand nombre de jobs, triés par le nombre d'heures de vol.
 
    ```sql
   
    ```
 
 ---
+
+#### 12. Compagnies avec des pilotes ayant un bonus moyen supérieur à 500
+   **Question** : Listez les compagnies où le bonus moyen des pilotes est supérieur à 500.
+
+```sql
+SELECT company
+FROM pilots
+GROUP BY company
+HAVING AVG(bonus) > 500;
+```
+
+#### 13. Pilotes avec un bonus supérieur à la moyenne de leur compagnie
+   **Question** : Trouvez les pilotes dont le bonus est supérieur à la moyenne des bonus des pilotes dans leur compagnie.
+
+```sql
+SELECT name, bonus, company
+FROM pilots p1
+WHERE bonus > (
+  SELECT AVG(bonus) 
+  FROM pilots p2 
+  WHERE p1.company = p2.company
+);
+```
