@@ -1,10 +1,10 @@
-### **Exercices de base sur l'agrégation**
 
 #### 1. **Somme des âges des pilotes**
    **Question** : Calculez la somme des âges des pilotes dans la table `pilots`.
 
    ```sql
-  
+   SELECT SUM(age) AS total_age
+   FROM pilots;
    ```
 
 ---
@@ -13,7 +13,9 @@
    **Question** : Obtenez le nombre total de pilotes pour chaque compagnie dans la table `pilots`.
 
    ```sql
-  
+   SELECT company, COUNT(*) AS num_pilots
+   FROM pilots
+   GROUP BY company;
    ```
 
 ---
@@ -22,26 +24,41 @@
    **Question** : Calculez l'âge moyen des pilotes dans la table `pilots`.
 
    ```sql
+   SELECT AVG(age) AS average_age
+   FROM pilots;
    ```
 
 ---
 
 #### 4. **Pilote le plus âgé**
    **Question** : Trouvez le pilote le plus âgé dans la table `pilots`.
+   - Donnez l'age maxiaml des pilotes par compagnie.
 
    ```sql
+    SELECT `name`, `age` FROM `pilots` WHERE age = (SELECT MAX(age) FROM pilots);
+    SELECT `company`, MAX(`age`) as max_age_by_comp FROM `pilots` GROUP BY `company`  ;
 
    ```
 
 ---
 
 #### 5. **Compagnies avec le plus grand nombre de pilotes**
-   **Question** : Trouvez les compagnies ayant le plus grand nombre de pilotes. Affichez le nom de la compagnie et le nombre de pilotes.
+   **Question** : Trouvez les compagnies ayant le plus grand nombre de pilotes. 
+   Affichez les codes des compagnies ayant le plus grand nombre de pilots.
 
    ```sql
-
+   SELECT company, COUNT(company) as nb
+   FROM pilots 
+   GROUP BY company
+   HAVING nb = (
+      -- On calcule le groupement ayant le max de pilote(s)
+      SELECT COUNT(company) AS num_pilots -- max value
+      FROM pilots
+      GROUP BY company
+      ORDER BY num_pilots DESC
+      LIMIT 1)
+   ;
    ```
-
 ---
 
 #### 6. **Nombre de pilotes ayant volé plus de 30 heures**
