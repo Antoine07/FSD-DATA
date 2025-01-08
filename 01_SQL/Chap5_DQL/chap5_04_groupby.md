@@ -77,7 +77,7 @@ Récupérez les données suivantes pour mettre à jour vos données.
 ALTER TABLE companies
 ADD COLUMN bonus DECIMAL(10, 2) DEFAULT 0;
 
-SELECT company, AVG(num_flying) AS avg_flying_hours
+SELECT company, ROUND( AVG(num_flying), 2 ) AS avg_flying_hours
 FROM pilots
 WHERE bonus = 200
 GROUP BY company;
