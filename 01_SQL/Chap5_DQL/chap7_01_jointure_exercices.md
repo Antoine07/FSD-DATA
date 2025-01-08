@@ -42,17 +42,17 @@ Trouvez les pilotes dont le bonus est égal ou supérieur au bonus de leur compa
 
 *Les exercices suivants sont plus difficiles*
 
-### 🎱 🎱  ** Exercice 9. Pilotes par ville**
+### 🎱 🎱  **Exercice 9. Pilotes par ville**
 Affichez le nom des pilotes et la ville de leur compagnie pour les villes de "Paris", "Tokyo", et "New York".
 
 ---
 
-### 🎱 🎱 ** Exercice 10. Avion le plus utilisé par compagnie**
+### 🎱 🎱 **Exercice 10. Avion le plus utilisé par compagnie**
 Pour chaque compagnie, identifiez le type d'avion (`plane`) le plus utilisé par les pilotes. Affichez le nom de la compagnie et le type d'avion.
 
 ---
 
-### 🎱 🎱 ** Exercice 11. Moyenne d'âge des pilotes par compagnie**
+### 🎱 🎱 **Exercice 11. Moyenne d'âge des pilotes par compagnie**
 Affichez le nom des compagnies et la moyenne d'âge de leurs pilotes.
 
 ---
