@@ -238,5 +238,20 @@ Sélectionnez les coordonnées des compagnies ayant des pilotes dont le nombre d
 >[!IMPORTANT]
 >Il est recommandé d'éviter l'utilisation excessive de sous-requêtes corrélées SQL, car elles s'exécutent pour chaque enregistrement retourné par la requête principale, ce qui peut ralentir considérablement les performances. Ces sous-requêtes ne doivent être utilisées que lorsque cela est absolument nécessaire et que les autres solutions (comme les jointures ou agrégations) ne conviennent pas.
 
+
+>[!NOTE]
+>Trouver les pilotes dont les heures de vol (num_flying) sont supérieures à la moyenne des heures de vol des pilotes de leur propre compagnie.
+
+```sql
+SELECT name, company, num_flying
+FROM pilots p
+WHERE p.num_flying > (
+    SELECT AVG(num_flying)
+    FROM pilots     
+    WHERE company = p.company
+);
+
+```
+
 -  Question: Sélectionner les pilotes dont le nombre d'heures de vol est supérieur à celui de la moyenne des heures de vol des pilotes de leur propre compagnie
 
