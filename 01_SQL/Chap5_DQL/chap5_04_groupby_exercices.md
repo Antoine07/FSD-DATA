@@ -103,21 +103,12 @@
    **Question** : Listez les compagnies où le bonus moyen des pilotes est supérieur à 500.
 
 ```sql
-SELECT company
-FROM pilots
-GROUP BY company
-HAVING AVG(bonus) > 500;
+
 ```
 
 #### 13. Pilotes avec un bonus supérieur à la moyenne de leur compagnie
    **Question** : Trouvez les pilotes dont le bonus est supérieur à la moyenne des bonus des pilotes dans leur compagnie.
 
 ```sql
-SELECT name, bonus, company
-FROM pilots p1
-WHERE bonus > (
-  SELECT AVG(bonus) 
-  FROM pilots p2 
-  WHERE p1.company = p2.company
-);
+
 ```
