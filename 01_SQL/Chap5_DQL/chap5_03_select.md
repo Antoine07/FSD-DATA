@@ -245,7 +245,7 @@ Sélectionnez les coordonnées des compagnies ayant des pilotes dont le nombre d
 ```sql
 SELECT name, company, num_flying
 FROM pilots p
-WHERE p.num_flying > (
+WHERE num_flying > (
     SELECT AVG(num_flying)
     FROM pilots     
     WHERE company = p.company -- ligne par ligne avec la requête principale
