@@ -19,6 +19,7 @@ Dans notre exemple, la table `pilots` utilise la colonne `certificate` comme cl�
 
 #### **Exemple dans la table `pilots` :**
 ```sql
+
 CREATE TABLE `pilots` (
   `certificate` CHAR(20),
   -- Autres colonnes...
@@ -26,6 +27,7 @@ CREATE TABLE `pilots` (
 ) ENGINE=InnoDB;
 
 -- Ou avec une contrainte nommée
+
 CREATE TABLE `pilots` (
   `certificate` CHAR(20),   
   -- Autres colonnes...
@@ -46,6 +48,10 @@ Dans notre exemple, la table `pilots` est liée à la table `companies` par la c
 
 #### **Exemple :**
 ```sql
+
+-- Attention à l'ordre dans lequel vous créez les tables 
+-- il faut que la table companies existe avant pour pouvoir la référencée depuis la table pilots
+
 CREATE TABLE `companies` (
     `comp` CHAR(10),
     -- Autres colonnes...
