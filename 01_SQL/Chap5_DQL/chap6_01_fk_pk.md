@@ -13,6 +13,7 @@ La **clé primaire** est une contrainte essentielle qui identifie de manière un
 #### **Caractéristiques principales d’une clé primaire :**
 - **Unicité** : Chaque valeur doit être unique.
 - **Non-nullité** : Une clé primaire ne peut pas contenir de valeurs `NULL`.
+- **Index** : le champ est indexé.
 
 Dans notre exemple, la table `pilots` utilise la colonne `certificate` comme clé primaire. Cela signifie que chaque pilote doit posséder un certificat unique pour être identifié.
 
