@@ -165,7 +165,10 @@ CREATE TABLE `pilots` (
 
 ### **5. Exemple complet avec `pilots` et `companies`**
 
-Voici un exemple combiné mettant en œuvre toutes les bonnes pratiques avec des options de gestion des suppressions et mises à jour.
+Voici un exemple combiné mettant en œuvre toutes les bonnes pratiques avec des options de gestion des suppressions et mises à jour. 
+
+>[!NOTE]
+>Si vous supprimer une compagnie ayant des références dans la table pilots le champ company aura pour valeur NULL et si vous changez la valeur de la clé primaire dans la table companies, cette valeur sera mise à jour dans la table pilots.
 
 ```sql
 CREATE TABLE `companies` (
