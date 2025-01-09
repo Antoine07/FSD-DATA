@@ -1,4 +1,4 @@
-## **Cours : Comprendre les clés primaires et étrangères avec les tables `pilots` et `companies`**
+## **Clés primaires et étrangères avec les tables `pilots` et `companies`**
 
 ### **Introduction**
 
