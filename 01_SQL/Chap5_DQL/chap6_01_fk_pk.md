@@ -85,6 +85,28 @@ ALTER TABLE `pilots`
 ADD CONSTRAINT `fk_pilots_company` FOREIGN KEY (`company`) REFERENCES `companies` (`comp`);
 ```
 
+Mais également ce code marchera aussi 
+
+```sql
+-- Création des tables sans clé étrangère
+CREATE TABLE `companies` (
+    `comp` CHAR(10),
+    -- Autres colonnes...
+    PRIMARY KEY (`comp`) 
+);
+
+CREATE TABLE `pilots` (
+  `certificate` CHAR(20),
+  `company` CHAR(10),
+  -- Autres colonnes...
+  PRIMARY KEY (`certificate`)
+);
+
+-- Ajout de la contrainte de clé étrangère
+ALTER TABLE `pilots`
+ADD CONSTRAINT `fk_pilots_company` FOREIGN KEY (`company`) REFERENCES `companies` (`comp`);
+```
+
 ---
 
 ### **3. Contraintes des clés étrangères**
