@@ -16,7 +16,7 @@ Identifiez les compagnies qui n'ont aucun pilote assigné. Utilisez une jointure
 ---
 
 ### **4. Bonus total par compagnie**
-Calculez le total des bonus des pilotes pour chaque compagnie. Affichez les colonnes `name` (compagnie) et `total_bonus`.
+Calculez le total des bonus des pilotes pour chaque compagnie. Affichez les colonnes `name` (compagnie) et `bonus` (bonus des pilotes).
 
 ---
 
@@ -31,7 +31,7 @@ Affichez le nom des compagnies et l'âge moyen des pilotes qui y travaillent.
 ---
 
 ### **7. Détails des compagnies "published"**
-Listez les noms des pilotes et le statut de leur compagnie uniquement pour les compagnies ayant le statut "published".
+Listez les noms des pilotes et le statut de leur compagnie uniquement pour les compagnies ayant le statut "published" (voir les données et sinon voir le DUMP).
 
 ---
 
@@ -42,26 +42,26 @@ Trouvez les pilotes dont le bonus est égal ou supérieur au bonus de leur compa
 
 *Les exercices suivants sont plus difficiles*
 
-### 🎱 🎱  **9. Pilotes par ville**
+### 🎱 🎱  **Exercice 9. Pilotes par ville**
 Affichez le nom des pilotes et la ville de leur compagnie pour les villes de "Paris", "Tokyo", et "New York".
 
 ---
 
-### 🎱 🎱 **10. Avion le plus utilisé par compagnie**
+### 🎱 🎱 **Exercice 10. Avion le plus utilisé par compagnie**
 Pour chaque compagnie, identifiez le type d'avion (`plane`) le plus utilisé par les pilotes. Affichez le nom de la compagnie et le type d'avion.
 
 ---
 
-### 🎱 🎱 **11. Moyenne d'âge des pilotes par compagnie
+### 🎱 🎱 **Exercice 11. Moyenne d'âge des pilotes par compagnie**
 Affichez le nom des compagnies et la moyenne d'âge de leurs pilotes.
 
 ---
 
-## 🎱 🎱 Exercice 12  Compagnies classées par nombre total de bonus
+###  🎱 🎱 **Exercice 12  Compagnies classées par nombre total de bonus**
 Affichez les noms des compagnies et le total des bonus de leurs pilotes, triés par ordre décroissant.
 
 --- 
 
-## Exercice 13 Liste des compagnies avec leurs villes et la moyenne des heures de vol de pilotes de plus de 40 ans
+### 🎱 🎱 **Exercice 13 Liste des compagnies avec leurs villes et la moyenne des heures de vol de pilotes de plus de 40 ans**
 
 Affichez les noms des compagnies, leur ville et la moyenne des heures de vol pour les pilotes ayant plus de 40 ans.

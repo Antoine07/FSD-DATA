@@ -50,10 +50,8 @@ ON p.company = c.comp;
 ```
 
 #### **Résultat**
-
-+------------------+-------------------+
 | pilot_name       | company_name      |
-+------------------+-------------------+
+|------------------|-------------------|
 | Alice Martin     | Paris Air         |
 | Pierre Dupont    | Paris Air         |
 | Chlo Dubois      | Lyon Airways      |
@@ -81,18 +79,26 @@ Inclut toutes les lignes de la table gauche, même si aucune correspondance n'ex
 **Exemple** : Liste des pilotes et leurs compagnies, même si certains pilotes ne sont pas rattachés à une compagnie.
 
 ```sql
+-- la table dominante est la table à gauche ici pilots
 SELECT p.name AS pilot_name, c.name AS company_name
 FROM pilots AS p
 LEFT OUTER JOIN companies AS c
+ON p.company = c.comp;
+
+-- la table dominante est la table de droite ici companies
+
+SELECT p.name AS pilot_name, c.name AS company_name
+FROM pilots AS p
+RIGHT OUTER JOIN companies AS c
 ON p.company = c.comp;
 ```
 
 Insérez dans la base de données des pilotes qui ne sont pas rattachés à une compagnie spécifique. 
 
 #### **Résultat**
-+------------------+-------------------+
+
 | pilot_name       | company_name      |
-+------------------+-------------------+
+|------------------|-------------------|
 | John Doe         | NULL              |
 | Alice Martin     | Paris Air         |
 | Pierre Dupont    | Paris Air         |
