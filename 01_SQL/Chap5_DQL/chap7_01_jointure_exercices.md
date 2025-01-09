@@ -16,7 +16,7 @@ Identifiez les compagnies qui n'ont aucun pilote assigné. Utilisez une jointure
 ---
 
 ### **4. Bonus total par compagnie**
-Calculez le total des bonus des pilotes pour chaque compagnie. Affichez les colonnes `name` (compagnie) et `total_bonus`.
+Calculez le total des bonus des pilotes pour chaque compagnie. Affichez les colonnes `name` (compagnie) et `bonus` (bonus des pilotes).
 
 ---
 
@@ -31,7 +31,7 @@ Affichez le nom des compagnies et l'âge moyen des pilotes qui y travaillent.
 ---
 
 ### **7. Détails des compagnies "published"**
-Listez les noms des pilotes et le statut de leur compagnie uniquement pour les compagnies ayant le statut "published".
+Listez les noms des pilotes et le statut de leur compagnie uniquement pour les compagnies ayant le statut "published" (voir les données et sinon voir le DUMP).
 
 ---
 
