@@ -44,7 +44,7 @@ Elle permet de retrouver rapidement un enregistrement spécifique dans la table,
 
 La **clé étrangère** relie une table à une autre en associant une colonne (ou plusieurs) à une clé primaire dans la table référencée. Elle garantit l’intégrité des données en imposant que les valeurs de cette colonne correspondent uniquement à des valeurs valides dans la table cible.
 
-Dans notre exemple, la table `pilots` est liée à la table `companies` par la colonne `company`. Cela signifie que chaque pilote doit appartenir à une entreprise existante.
+Dans notre exemple, la table `pilots` est liée à la table `companies` par la colonne `company`. Cela signifie que chaque pilote doit appartenir à une comapagnie existante.
 
 #### **Exemple :**
 ```sql
@@ -67,7 +67,7 @@ CREATE TABLE `pilots` (
 ```
 
 💡 **Avantages de la clé étrangère :**  
-- Garantir qu’une entreprise listée dans `pilots` existe réellement dans `companies`.
+- Garantir qu’une comapagnie listée dans `pilots` existe réellement dans `companies`.
 - Faciliter la suppression ou la mise à jour des données de manière cohérente.
 
 #### **Définir les relations après la création des tables :**
@@ -121,9 +121,9 @@ Les contraintes associées aux clés étrangères permettent de maintenir l’in
 
 #### **Cas typiques de contraintes :**
 1. **Insertion ou mise à jour dans `pilots` :**  
-   - Impossible d’ajouter un pilote avec une entreprise inexistante dans `companies`.
+   - Impossible d’ajouter un pilote avec une comapagnie inexistante dans `companies`.
 2. **Suppression ou modification dans `companies` :**  
-   - Impossible de supprimer ou de modifier une entreprise si des pilotes y sont associés, sauf si une action spécifique est définie (ex. : `CASCADE`, `SET NULL`).
+   - Impossible de supprimer ou de modifier une comapagnie si des pilotes y sont associés, sauf si une action spécifique est définie (ex. : `CASCADE`, `SET NULL`).
 
 ---
 
@@ -136,10 +136,10 @@ Lorsqu’une clé étrangère est définie, vous pouvez configurer le comporteme
    - Empêche la suppression de l’enregistrement dans `companies` si des pilotes y sont associés.
 
 2. **SET NULL :**  
-   - Remplace la valeur dans la colonne `company` de `pilots` par `NULL` si l’entreprise correspondante est supprimée.
+   - Remplace la valeur dans la colonne `company` de `pilots` par `NULL` si l’comapagnie correspondante est supprimée.
 
 3. **CASCADE :**  
-   - Supprime automatiquement les pilotes associés lorsque l’entreprise est supprimée.
+   - Supprime automatiquement les pilotes associés lorsque l’comapagnie est supprimée.
 
 #### **Exemple avec `ON DELETE CASCADE` :**
 ```sql
